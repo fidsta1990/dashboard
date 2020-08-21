@@ -247,7 +247,7 @@ nav {
   height: 40px;
 }
 .links a {
-  color: var(--clr-grey-3);
+  color: var(--lightGrey);
   font-size: 1rem;
   text-transform: capitalize;
   letter-spacing: var(--spacing);
@@ -256,9 +256,15 @@ nav {
   transition: var(--transition);
 }
 .links a:hover {
-  background: var(--clr-primary-8);
-  color: var(--clr-primary-5);
-  padding-left: 1.5rem;
+  border-left: 5px solid var(--neonGreen);
+  background: var(--purpleDark);
+  padding-left: 3rem;
+}
+
+.links .active {
+  background: var(--purpleDark);
+  border-left: 5px solid var(--neonGreen);
+  padding-right: 1rem;
 }
 
 .links {
