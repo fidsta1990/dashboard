@@ -302,7 +302,7 @@ Header
     height: 5rem;
     background: var(--darkGrey);
     display: grid;
-    grid-template-columns: auto 25rem;
+    grid-template-columns: auto 30rem;
     box-shadow: var(--light-shadow);
     border-bottom-left-radius: var(--radius);
     border-bottom-right-radius: var(--radius);
@@ -312,6 +312,7 @@ Header
 
   .search {
     height: 3rem;
+    width: 80%;
   }
 
   .input-search {
@@ -319,7 +320,6 @@ Header
     max-width: 1300px;
     height: 3rem;
     position: relative;
-    outline: transparent;
     border: transparent;
     border-radius: 0.5rem;
   }
@@ -332,29 +332,43 @@ Header
     color: rgb(143, 142, 142);
   }
 
-  input[placeholder="Search Jobs.."] {
-    padding-left: 2.5rem;
+  input::placeholder {
     color: rgb(143, 142, 142);
     letter-spacing: var(--spacing);
     font-weight: 300;
+    font-size: 1rem;
   }
   input[type="text"] {
     color: var(--neonGreen);
     font-weight: 600;
     width: 100%;
     max-width: 1000px;
+    padding-left: 2.5rem;
+    font-size: 1.2rem;
+  }
+
+  input:focus {
+    outline: none;
+    box-shadow: var(--light-shadow);
   }
 
   .icons {
-    width: 30%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-left: 1rem;
+  }
+
+  .icons a {
+    margin: 0 0.5rem;
+    transition: var(--transition);
+    font-size: 1.3rem;
   }
 
   .icons ion-icon {
-    font-size: 1.3rem;
+    transition: var(--transition);
+  }
+  .icons ion-icon:hover {
+    color: rgb(10, 94, 10);
   }
 
   .notify {
@@ -371,9 +385,31 @@ Header
     width: 1rem;
     font-size: 0.7rem;
     text-align: center;
-    bottom: 1rem;
-    right: 0.09rem;
+    bottom: 1.2rem;
+    right: 0.14rem;
     padding-top: 0.1rem;
+  }
+
+  .profile {
+    display: flex;
+    width: 4rem;
+    height: 2rem;
+  }
+
+  .profile ion-icon {
+    padding-left: 0.5rem;
+  }
+
+  .user {
+    background: url("../img/profile.jpeg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.5rem;
   }
 }
 /*
