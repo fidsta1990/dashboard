@@ -13,6 +13,7 @@ Variables
 */
 
 :root {
+  --purpleSoft: #8269aa;
   --purpleLight: #383453;
   --purpleDark: #282639;
   /* --purpleLinear: linear-gradient(
@@ -47,6 +48,7 @@ body {
   background: var(--lightGrey);
   line-height: 1.5;
   font-size: 0.875rem;
+  /* min-height: 100vh; */
 }
 ul {
   list-style-type: none;
@@ -144,7 +146,7 @@ a {
 @media (min-width: 768px) {
   .section {
     width: 100%;
-    max-width: 1500px;
+    max-width: 1300px;
     position: relative;
     top: 5rem;
     left: 17.5rem;
@@ -431,13 +433,291 @@ Header
 }
 /*
   =============== 
-Profile
+Dashboard
   ===============
   */
 
-.profile-heading {
+.profile-title {
+  min-height: 100vh;
 }
 
+.profile-heading h2 {
+  margin-top: 3rem;
+  color: var(--purpleSoft);
+  letter-spacing: var(--spacing);
+}
+
+.profile-heading p {
+  color: var(--megaGrey);
+  font-weight: 500;
+  letter-spacing: var(--spacing);
+}
+
+/*
+  =============== 
+ Cards
+  ===============
+  */
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+  transition: var(--transition);
+  justify-items: center;
+}
+
+.card {
+  border: transparent;
+  background: var(--white);
+  box-shadow: var(--light-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* height: 25rem; */
+  transition: var(--transition);
+  border-radius: 0.5rem;
+  max-width: 25rem;
+  height: 28rem;
+}
+.card:hover {
+  box-shadow: var(--dark-shadow);
+}
+
+/* profile */
+.profile-img {
+  background: url("../img/pexels-thirdman-5060987.jpg");
+  background-position: center 10%;
+  background-size: cover;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  padding: 1rem;
+  margin: 2rem 0;
+}
+
+.profile-name {
+  color: var(--purpleSoft);
+}
+.profile-job {
+  color: grey;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.185);
+}
+.profile-info {
+  display: flex;
+  padding-top: 1rem;
+  color: var(--megaGrey);
+}
+
+.profile-info .education {
+  padding: 0 1rem;
+}
+/* end of profile */
+
+/* interview */
+.interview {
+  font-size: 1.3rem;
+}
+
+@media (min-width: 997px) {
+  .interview {
+    width: 90%;
+    text-align: center;
+    font-size: 1.8rem;
+  }
+}
+
+.date {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  border-left: 3px solid var(--neonGreen);
+  width: 100%;
+  text-align: center;
+  color: var(--megaGrey);
+  letter-spacing: var(--spacing);
+  background: rgba(214, 214, 214, 0.664);
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  color: var(--megaGrey);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.tasks p:nth-child(3) {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.432);
+  padding-bottom: 0.5rem;
+}
+
+/* end of interview */
+
+/* stage */
+.stage {
+  display: flex;
+}
+/* end of stage */
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+    column-gap: 1rem;
+    width: 100%;
+    max-width: 900px;
+    transition: var(--transition);
+    justify-items: flex-start;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 25rem;
+    height: 25rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    width: 100%;
+    /* max-width: 1200px; */
+    transition: var(--transition);
+    justify-items: flex-start;
+  }
+
+  .card {
+    margin: 0;
+    max-width: 25rem;
+    height: 28rem;
+  }
+}
+@media (min-width: 1300px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+    width: 100%;
+    max-width: 1300px;
+    transition: var(--transition);
+  }
+
+  .card {
+    width: 100%;
+    max-width: 50rem;
+  }
+}
+
+/*
+  =============== 
+Table
+  ===============
+  */
+.table {
+  margin: 0;
+}
+
+.table {
+  margin-top: 5rem;
+  min-height: 70vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 700px;
+}
+table {
+  width: 100%;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  box-shadow: var(--dark-shadow);
+}
+
+thead {
+  background: var(--darkGrey);
+}
+
+th {
+  padding: 1rem;
+  border: transparent;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: left;
+}
+
+td {
+  padding: 1rem;
+  background: var(--white);
+}
+
+td span {
+  padding: 0.7rem;
+  margin-right: 0.5rem;
+  color: var(--white);
+  background: coral;
+  border-radius: 50%;
+  text-align: center;
+  height: 45px;
+  width: 45px;
+}
+
+@media (min-width: 600px) {
+  .table {
+    margin-top: 5rem;
+    min-height: 50vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 700px;
+  }
+}
+
+@media (min-width: 768px) {
+  .table {
+    margin-top: 5rem;
+    min-height: 30vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1000px;
+  }
+  table {
+    width: 100%;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    box-shadow: var(--dark-shadow);
+  }
+
+  thead {
+    background: var(--darkGrey);
+  }
+
+  th {
+    padding: 1rem;
+    border: transparent;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  td {
+    padding: 1rem;
+    background: var(--white);
+  }
+
+  td span {
+    padding: 0.7rem;
+    margin-right: 0.5rem;
+    color: var(--white);
+    background: coral;
+    border-radius: 50%;
+    text-align: center;
+    height: 45px;
+    width: 45px;
+  }
+}
 /*
   =============== 
   Services
